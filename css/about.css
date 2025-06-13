@@ -1,0 +1,448 @@
+   
+        :root {
+            --primary-blue: #0039d6;
+            --dark-blue: #002699;
+            --light-blue: #e6f0ff;
+            --accent-blue: #4d88ff;
+            --text-dark: #333333;
+            --text-light: #666666;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.7;
+            background: linear-gradient(120deg, #0039d6 0%, #4d88ff 100%);
+            background-attachment: fixed;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            color: var(--dark-blue);
+        }
+        
+        /* Hero Section */
+        .ttm-page-title-row {
+            position: relative;
+            overflow: hidden;
+            padding: 60px 0;
+            background: none;
+        }
+        .ttm-page-title-row .ttm-row-wrapper-bg-layer::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 1;
+            background: linear-gradient(120deg, #0039d6 0%, #4d88ff 100%);
+            opacity: 0.95;
+            animation: gradientMove 8s ease-in-out infinite alternate;
+        }
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+        
+        .ttm-page-title-row .title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        
+        .breadcrumb-wrapper {
+            color: rgba(255,255,255,0.8);
+        }
+        
+        .breadcrumb-wrapper a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .breadcrumb-wrapper a:hover {
+            color: var(--light-blue);
+        }
+         */
+        /* About Section */
+        .about-section {
+            background-color: white;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .section-title .title-header h2, 
+        .section-title .title-header h3 {
+            color: var(--primary-blue);
+            position: relative;
+            margin-bottom: 25px;
+        }
+        
+        .section-title .title-header h2:after,
+        .section-title .title-header h3:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: var(--primary-blue);
+            margin: 15px 0;
+        }
+        
+        .title-style-center_text .title-header h2:after,
+        .title-style-center_text .title-header h3:after {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Mission/Vision Cards */
+        .featured-icon-box.style7 {
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            padding: 30px;
+            height: 100%;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border: 1px solid rgba(0,57,214,0.1);
+        }
+        
+        .featured-icon-box.style7:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,57,214,0.1);
+            border-color: rgba(0,57,214,0.2);
+        }
+        
+        .featured-icon-box.style7 .featured-icon .ttm-icon_element-color-skincolor {
+            color: var(--primary-blue);
+        }
+        
+        .featured-icon-box.style7 .featured-title h4 {
+            color: var(--primary-blue);
+            font-weight: 600;
+        }
+        
+        /* Manufacturing Excellence Section */
+        .service-one-section {
+            background-color: var(--light-blue);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-one-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('images/pattern-blue.png') repeat;
+            opacity: 0.05;
+            z-index: -1;
+        }
+        
+        .featured-icon-box.style5 {
+            background: white;
+            border-radius: 8px;
+            padding: 40px 30px;
+            transition: all 0.3s ease;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .featured-icon-box.style5:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 4px;
+            background: var(--primary-blue);
+            transition: all 0.3s ease;
+        }
+        
+        .featured-icon-box.style5:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,57,214,0.1);
+        }
+        
+        .featured-icon-box.style5:hover:after {
+            width: 100%;
+        }
+        
+        .featured-icon-box.style5 .featured-icon i {
+            font-size: 50px;
+            color: var(--primary-blue);
+        }
+        
+        .featured-icon-box.style5 .featured-title h3 {
+            color: var(--primary-blue);
+            font-weight: 600;
+        }
+        
+        /* Team Section */
+        .team-section {
+            background: white;
+            padding: 80px 0;
+            position: relative;
+        }
+        
+        .team-section h2 {
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .team-section h2:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: var(--primary-blue);
+            margin: 15px auto 30px;
+        }
+        
+        .team-section ul {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .team-section li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+            color: var(--text-light);
+        }
+        
+        .team-section li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary-blue);
+            font-weight: bold;
+        }
+        
+        .team-section strong {
+            color: var(--dark-blue);
+        }
+        
+        .team-quote {
+            font-style: italic;
+            color: var(--primary-blue);
+            font-weight: 500;
+            margin-top: 40px;
+            font-size: 1.2rem;
+            position: relative;
+            padding: 20px;
+            border-left: 3px solid var(--primary-blue);
+            background: rgba(0,57,214,0.05);
+        }
+        
+        /* --- Advanced Blue Gradient Animations & Modern Effects --- */
+        /* Floating Gradient Orbs */
+        .gradient-orb {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 10;
+            opacity: 0.7;
+            background: radial-gradient(circle at 30% 30%, #4d88ff 0%, #0039d6 80%);
+            animation: orbFloat 10s ease-in-out infinite alternate;
+        }
+        .gradient-orb.orb1 { width: 120px; height: 120px; top: 10%; left: 5%; animation-delay: 0s; }
+        .gradient-orb.orb2 { width: 90px; height: 90px; top: 60%; right: 10%; animation-delay: 2s; }
+        .gradient-orb.orb3 { width: 70px; height: 70px; bottom: 15%; left: 25%; animation-delay: 4s; }
+        @keyframes orbFloat {
+            0% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-30px) scale(1.1); }
+            100% { transform: translateY(0) scale(1); }
+        }
+
+        /* Enhanced Fade-in Animation with Gradient Reveal */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(40px) scale(0.98);
+            background: linear-gradient(90deg, #0039d6 0%, #4d88ff 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            transition: opacity 0.8s cubic-bezier(.77,0,.18,1), transform 0.8s cubic-bezier(.77,0,.18,1);
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            color: var(--text-dark);
+            background: none;
+            -webkit-background-clip: initial;
+        }
+
+        /* Animated Gradient Border for Cards */
+        .featured-icon-box.style7, .featured-icon-box.style5 {
+            border: 3px solid;
+            border-image: linear-gradient(120deg, #0039d6, #4d88ff, #002699) 1;
+            box-shadow: 0 8px 32px 0 rgba(0,57,214,0.10);
+            position: relative;
+            overflow: hidden;
+        }
+        .featured-icon-box.style7:before, .featured-icon-box.style5:before {
+            content: '';
+            position: absolute;
+            top: -2px; left: -2px; right: -2px; bottom: -2px;
+            z-index: 0;
+            background: linear-gradient(120deg, #0039d6, #4d88ff, #002699);
+            opacity: 0.12;
+            filter: blur(8px);
+            pointer-events: none;
+        }
+        .featured-icon-box.style7 .featured-content, .featured-icon-box.style5 .featured-content {
+            position: relative;
+            z-index: 1;
+        }
+        .featured-icon-box.style7:hover, .featured-icon-box.style5:hover {
+            box-shadow: 0 16px 48px 0 rgba(0,57,214,0.18);
+            border-image: linear-gradient(120deg, #4d88ff, #0039d6, #002699) 1;
+            transition: box-shadow 0.4s, border-image 0.4s;
+        }
+
+        /* Glowing Gradient Shadow on Interactive Card Hover */
+        .interactive-card .card-inner {
+            box-shadow: 0 0 0 rgba(77,136,255,0.0);
+            transition: box-shadow 0.5s, transform 0.6s;
+        }
+        .interactive-card:hover .card-inner {
+            box-shadow: 0 8px 40px 0 rgba(77,136,255,0.35), 0 0 32px 0 #0039d6;
+            background: linear-gradient(120deg, #0039d6 0%, #4d88ff 100%);
+        }
+
+        /* Animated Gradient Button (for future use) */
+        .btn-gradient {
+            background: linear-gradient(90deg, #0039d6, #4d88ff);
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            padding: 12px 32px;
+            font-weight: 600;
+            box-shadow: 0 4px 16px 0 rgba(0,57,214,0.10);
+            transition: background 0.4s, box-shadow 0.4s, transform 0.2s;
+        }
+        .btn-gradient:hover {
+            background: linear-gradient(90deg, #4d88ff, #0039d6);
+            box-shadow: 0 8px 32px 0 rgba(0,57,214,0.18);
+            transform: translateY(-2px) scale(1.04);
+        }
+
+        /* Responsive: Hide orbs on mobile */
+        @media (max-width: 991px) {
+            .gradient-orb { display: none; }
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 991px) {
+            .ttm-page-title-row .title {
+                font-size: 2.5rem;
+            }
+            
+            .floating-element {
+                display: none;
+            }
+        }
+        
+        /* Interactive Elements */
+        .interactive-card {
+            perspective: 1000px;
+        }
+        
+        .card-inner {
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        
+        .interactive-card:hover .card-inner {
+            transform: rotateY(10deg);
+        }
+        
+        /* Scroll Animation */
+        .fade-in {
+            opacity: 0;
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            transform: translateY(30px);
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Animated Fabric Background Layers */
+        .fabric-bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.1;
+        }
+        .fabric-bg.silk { background: url('images/fabric-silk.png') repeat; }
+        .fabric-bg.cotton { background: url('images/fabric-cotton.png') repeat; }
+        .fabric-bg.leather { background: url('images/fabric-leather.png') repeat; }
+        .fabric-bg.georgette { background: url('images/fabric-georgette.png') repeat; }
+        .fabric-bg.wool { background: url('images/fabric-wool.png') repeat; }
+
+        /* --- Perfected Cloth Animation: Enhanced Realism & Responsiveness --- */
+        .cloth-animation {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: 1;
+            pointer-events: none;
+            opacity: 0.18;
+            background-repeat: no-repeat;
+            background-size: cover;
+            mix-blend-mode: lighten;
+            animation: clothFlow 22s cubic-bezier(.77,0,.18,1) infinite alternate;
+            will-change: filter, transform, opacity;
+            transition: opacity 0.8s;
+        }
+        .cloth-hero {
+            background: radial-gradient(ellipse at 60% 30%, #4d88ffcc 0%, #0039d6 60%, transparent 100%),
+                        repeating-linear-gradient(120deg, #e6f0ff22 0 10px, transparent 10px 20px);
+            animation-delay: 0s;
+        }
+        .cloth-mission {
+            background: radial-gradient(ellipse at 30% 70%, #0039d6bb 0%, #4d88ff 60%, transparent 100%),
+                        repeating-linear-gradient(100deg, #4d88ff11 0 12px, transparent 12px 24px);
+            animation-delay: 2s;
+        }
+        .cloth-vision {
+            background: radial-gradient(ellipse at 80% 50%, #e6f0ffcc 0%, #0039d6 70%, transparent 100%),
+                        repeating-linear-gradient(140deg, #0039d611 0 8px, transparent 8px 16px);
+            animation-delay: 4s;
+        }
+        .cloth-manufacturing {
+            background: radial-gradient(ellipse at 40% 80%, #4d88ffcc 0%, #002699 70%, transparent 100%),
+                        repeating-linear-gradient(160deg, #4d88ff22 0 14px, transparent 14px 28px);
+            animation-delay: 6s;
+        }
+        .cloth-team {
+            background: radial-gradient(ellipse at 70% 60%, #0039d6bb 0%, #e6f0ff 60%, transparent 100%),
+                        repeating-linear-gradient(110deg, #0039d611 0 10px, transparent 10px 20px);
+            animation-delay: 8s;
+        }
+        @keyframes clothFlow {
+            0%   { filter: blur(0px) brightness(1) hue-rotate(0deg); transform: scale(1) translateY(0); opacity: 1; }
+            20%  { filter: blur(2px) brightness(1.08) hue-rotate(8deg); transform: scale(1.03) translateY(-10px) skewY(1deg); opacity: 0.95; }
+            40%  { filter: blur(3px) brightness(1.12) hue-rotate(-8deg); transform: scale(1.04) translateY(10px) skewY(-1deg); opacity: 0.92; }
+            60%  { filter: blur(2.5px) brightness(1.10) hue-rotate(4deg); transform: scale(1.02) translateY(-8px) skewY(0.5deg); opacity: 0.96; }
+            80%  { filter: blur(1.5px) brightness(1.04) hue-rotate(-4deg); transform: scale(1.01) translateY(4px) skewY(-0.5deg); opacity: 0.98; }
+            100% { filter: blur(0.5px) brightness(1.01) hue-rotate(0deg); transform: scale(1) translateY(0); opacity: 1; }
+        }
+        /* Responsive: Hide cloth animation on mobile for performance */
+        @media (max-width: 991px) {
+            .cloth-animation { display: none; }
+        }
+        
+        /* Ensure content is above cloth animation */
+        .page, .ttm-page-title-row, .site-main, .container, .floating-element, .gradient-orb {
+            position: relative;
+            z-index: 2;
+        }
