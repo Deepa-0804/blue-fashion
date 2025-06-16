@@ -19,8 +19,338 @@
     <link rel="stylesheet" type="text/css" href="css/shortcodes.css" />
     <link rel="stylesheet" type="text/css" href="css/megamenu.css" />
     <link rel="stylesheet" type="text/css" href="css/responsive.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #2563eb;
+            --dark-blue: #1e40af;
+            --light-blue: #93c5fd;
+            --bg-gray: #f8fafc;
+            --text-dark: #1f2937;
+            --text-medium: #4b5563;
+            --text-light: #6b7280;
+            --border-light: #e5e7eb;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 25px rgba(0,0,0,0.1);
+            --rounded-sm: 8px;
+            --rounded-md: 12px;
+            --rounded-lg: 16px;
+            --rounded-xl: 24px;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: white;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .modern-hero {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.9) 0%, rgba(30, 64, 175, 0.9) 100%), 
+                        url('images/web-shots/WOW03236C2.jpg') center/cover no-repeat;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 80px 0;
+        }
+        
+        .hero-content {
+            z-index: 2;
+            position: relative;
+            max-width: 800px;
+        }
+        
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            background: linear-gradient(to right, #fff, #e0e7ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            letter-spacing: -0.05em;
+        }
+        
+        .breadcrumb {
+            color: rgba(255,255,255,0.8);
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .breadcrumb a {
+            color: white;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .breadcrumb a:hover {
+            color: var(--light-blue);
+        }
+        
+        .breadcrumb-separator {
+            opacity: 0.6;
+            font-size: 0.8rem;
+        }
+        
+        .breadcrumb span:last-child {
+            color: var(--light-blue);
+            font-weight: 500;
+        }
+        
+        /* Modern Project Card */
+        .project-section {
+            padding: 60px 0;
+            background-color: white;
+        }
+        
+        .project-card {
+            border-radius: var(--rounded-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+            background: white;
+            margin-top: -100px;
+            position: relative;
+            z-index: 10;
+            border: 1px solid var(--border-light);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+        
+        .project-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            min-height: 500px;
+        }
+        
+        .project-image-container {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .project-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .project-image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .project-image-container:hover .project-image-overlay {
+            opacity: 1;
+        }
+        
+        .project-image-container:hover .project-image {
+            transform: scale(1.05);
+        }
+        
+        .zoom-icon {
+            background: rgba(255,255,255,0.9);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark-blue);
+            font-size: 1.5rem;
+            transform: scale(0.8);
+            transition: all 0.3s ease;
+        }
+        
+        .project-image-container:hover .zoom-icon {
+            transform: scale(1);
+        }
+        
+        .info-section {
+            padding: 40px;
+            background: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .info-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 24px;
+            position: relative;
+            padding-bottom: 16px;
+        }
+        
+        .info-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary-blue), var(--dark-blue));
+            border-radius: 3px;
+        }
+        
+        .info-desc {
+            color: var(--text-medium);
+            line-height: 1.7;
+            font-size: 1.05rem;
+            margin-bottom: 32px;
+        }
+        
+        .detail-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+        
+        .detail-item {
+            display: flex;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-light);
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .detail-icon {
+            width: 36px;
+            height: 36px;
+            background: rgba(37, 99, 235, 0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-blue);
+            flex-shrink: 0;
+        }
+        
+        .detail-content {
+            flex: 1;
+        }
+        
+        .detail-label {
+            font-weight: 600;
+            color: var(--dark-blue);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+        
+        .detail-value {
+            color: var(--text-dark);
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+        
+        .status-badge {
+            background: linear-gradient(to right, #10b981, #34d399);
+            color: white;
+            padding: 6px 14px 6px 10px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .status-badge:before {
+            content: '';
+            display: block;
+            width: 8px;
+            height: 8px;
+            background-color: white;
+            border-radius: 50%;
+        }
+        
+        /* Modern Responsive Adjustments */
+        @media (max-width: 1024px) {
+            .project-grid {
+                grid-template-columns: 1fr;
+                min-height: auto;
+            }
+            
+            .project-image-container {
+                height: 400px;
+            }
+            
+            .project-card {
+                margin-top: -60px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .modern-hero {
+                min-height: 60vh;
+                padding: 60px 0;
+            }
+            
+            .info-section {
+                padding: 30px;
+            }
+            
+            .hero-title {
+                margin-bottom: 16px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .modern-hero {
+                min-height: 50vh;
+            }
+            
+            .project-image-container {
+                height: 300px;
+            }
+            
+            .info-section {
+                padding: 24px;
+            }
+            
+            .detail-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+            
+            .detail-icon {
+                width: 32px;
+                height: 32px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
 </head>
-
 <body>
     <!--page start-->
     <div class="page">
@@ -34,28 +364,139 @@
         <!-- header start -->
         <?php include 'header.php'; ?>
         <!-- header end -->
-        <!-- page-title -->
-        <div class="ttm-page-title-row ttm-bg ttm-bgimage-yes ttm-bgcolor-darkgrey clearfix">
-            <div class="ttm-row-wrapper-bg-layer ttm-bg-layer"></div>
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-12">
-                        <div class="ttm-page-title-row-inner">
-                            <div class="page-title-heading">
-                                <h2 class="title">Wool Fabric</h2>
+    <!-- Modern Hero Banner -->
+    <section class="modern-hero animate__animated animate__fadeIn">
+        <div class="container">
+            <div class="hero-content text-white">
+                <h1 class="hero-title animate__animated animate__fadeInUp">Premium Wool Fabric Collection</h1>
+                <div class="breadcrumb animate__animated animate__fadeInUp animate__delay-1s">
+                    <a href="index.php">Home</a>
+                    <span class="breadcrumb-separator">/</span>
+                    <span>Wool Fabric</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modern Project Section -->
+    <section class="project-section">
+        <div class="container">
+            <div class="project-card animate__animated animate__fadeIn animate__delay-1s">
+                <div class="project-grid">
+                    <div class="project-image-container">
+                         <img src="images/web-shots/WOW03236C2.jpg" alt="portfolio-img" class="project-image">
+                        <div class="project-image-overlay">
+                            <div class="zoom-icon">
+                                <i class="fas fa-search-plus"></i>
                             </div>
-                            <div class="breadcrumb-wrapper">
-                                <span>
-                                    <a title="Homepage" href="index.php">Home</a>
-                                </span>
-                                <span>Wool Fabric</span>
+                        </div>
+                    </div>
+                    <div class="info-section">
+                        <div class="info-title">Project Details</div>
+                        <p class="info-desc">
+                           Wool fabric project offers warmth, durability, and natural comfort, ideal for stylish, sustainable clothing.
+                        </p>
+                        <div class="detail-list">
+                            <div class="detail-item">
+                                <div class="detail-icon">
+                                    <i class="fas fa-project-diagram"></i>
+                                </div>
+                                <div class="detail-content">
+                                    <div class="detail-label">Project</div>
+                                    <div class="detail-value">Wool Materials</div>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-icon">
+                                    <i class="fas fa-tags"></i>
+                                </div>
+                                <div class="detail-content">
+                                    <div class="detail-label">Category</div>
+                                    <div class="detail-value">Wool</div>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-icon">
+                                    <i class="fas fa-user-tie"></i>
+                                </div>
+                                <div class="detail-content">
+                                    <div class="detail-label">Client</div>
+                                    <div class="detail-value">Alex Sam Martin</div>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-icon">
+                                    <i class="fas fa-calendar-alt"></i>
+                                </div>
+                                <div class="detail-content">
+                                    <div class="detail-label">Date</div>
+                                    <div class="detail-value">February 10, 2021</div>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div class="detail-content">
+                                    <div class="detail-label">Status</div>
+                                    <div class="status-badge">Completed</div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- page-title end -->
+    </section>
+
+    <!-- Modern JavaScript Effects -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Intersection Observer for scroll animations
+            const animateOnScroll = (elements, animation) => {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add(animation);
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {threshold: 0.1});
+                
+                elements.forEach(el => observer.observe(el));
+            };
+            
+            // Animate elements
+            const projectCard = document.querySelector('.project-card');
+            if (projectCard) {
+                animateOnScroll([projectCard], 'animate__fadeInUp');
+            }
+            
+            // Enhanced hover effect for project image
+            const projectImage = document.querySelector('.project-image');
+            const projectImageContainer = document.querySelector('.project-image-container');
+            
+            if (projectImage && projectImageContainer) {
+                projectImageContainer.addEventListener('mouseenter', () => {
+                    projectImage.style.transform = 'scale(1.05)';
+                });
+                
+                projectImageContainer.addEventListener('mouseleave', () => {
+                    projectImage.style.transform = 'scale(1)';
+                });
+            }
+            
+            // Click handler for zoom icon (could be expanded to open a lightbox)
+            const zoomIcon = document.querySelector('.zoom-icon');
+            if (zoomIcon) {
+                zoomIcon.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    // Here you would typically open a lightbox with the full-size image
+                    console.log('Open image in lightbox');
+                });
+            }
+        });
+    </script>
         <!--site-main start-->
         <div class="site-main">
             <section class="ttm-row project-single-section clearfix">
@@ -70,7 +511,8 @@
                                             <div class="col-md-12 col-lg-8">
                                                 <!-- ttm_pf_image-wrapper -->
                                                 <div class="ttm_pf_image-wrapper">
-                                                    <img class="img-fluid" src="images/web-shots/WOW03236C2.jpg" alt="portfolio-img">
+                                                      <img src="images/web-shots/WOW03350C4.jpg" alt="Linen Fabric Closeup" class="project-image">
+                                                    <img src="images/web-shots/WOW03236C2.jpg" alt="portfolio-img" class="project-image">
                                                 </div><!-- ttm_pf_image-wrapper end -->
                                             </div>
                                             <div class="col-md-12 col-lg-4">
