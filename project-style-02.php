@@ -834,6 +834,9 @@
       .hero h1 {
         font-size: 2.5rem;
       }
+      .grid-gallery {
+       display:none;
+      }
       
       .fabrics-grid {
         grid-template-columns: 1fr;
@@ -1085,7 +1088,7 @@
   <!-- Parallax Section -->
   <section class="parallax" style="background-image: url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')">
     <div class="parallax-content">
-      <h2>Craft Your Vision</h2>
+      <h2 style="color:#fff">Craft Your Vision</h2>
       <p>Our premium textiles provide the perfect foundation for your creative projects, whether you're designing fashion or furnishing spaces.</p>
       <a href="#" class="cta-btn">Contact Our Experts</a>
     </div>

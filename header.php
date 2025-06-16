@@ -144,4 +144,49 @@
         width: 100%;
         box-shadow: 0 4px 24px var(--shadow-color);
     }
+    @media (max-width: 991px) {
+    .main-menu.menu-mobile {
+      position: fixed;
+      top: 0;
+      right: -100vw;
+      width: 80vw;
+      max-width: 320px;
+      height: 100vh;
+      background: #0a47aa;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding: 80px 24px 24px 24px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+      transition: right 0.3s cubic-bezier(.22,1,.36,1);
+      z-index: 2000;
+    }
+    .main-menu.menu-mobile.menu-open {
+      right: 0;
+    }
+  }
 </style>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const menuBtn = document.querySelector('.btn-show-menu-mobile');
+    const menu = document.querySelector('.main-menu.menu-mobile');
+    if(menuBtn && menu) {
+      menuBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        menu.classList.toggle('menu-open');
+      });
+      // Optional: close menu when clicking outside
+      document.addEventListener('click', function(e) {
+        if (!menu.contains(e.target) && !menuBtn.contains(e.target)) {
+          menu.classList.remove('menu-open');
+        }
+      });
+      // Optional: close menu on link click (for single page feel)
+      menu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          menu.classList.remove('menu-open');
+        });
+      });
+    }
+  });
+</script>
