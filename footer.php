@@ -37,11 +37,11 @@
                     <div class="footer-widget">
                         <h3 class="footer-title">Our Products</h3>
                         <ul class="footer-links">
-                            <li><a href="silk-fabric.html">Silk Fabrics</a></li>
-                            <li><a href="cotton-fabric.html">Cotton Textiles</a></li>
-                            <li><a href="technical-textiles.html">Technical Textiles</a></li>
-                            <li><a href="sustainable-materials.html">Sustainable Materials</a></li>
-                            <li><a href="custom-fabrics.html">Custom Fabrics</a></li>
+                            <li><a href="silk-fabric.php">Silk Fabrics</a></li>
+                            <li><a href="cotton-fabric.php">Cotton Textiles</a></li>
+                            <li><a href="technical-textiles.php">Technical Textiles</a></li>
+                            <li><a href="sustainable-materials.php">Sustainable Materials</a></li>
+                            <li><a href="custom-fabrics.php">Custom Fabrics</a></li>
                             <li><a href="industrial-textiles.html">Industrial Textiles</a></li>
                         </ul>
                     </div>
@@ -345,6 +345,38 @@
     
     .footer-social {
         justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-top {
+        padding: 25px;
+    }
+    .footer-title {
+        font-size: 1rem;
+        padding-bottom: 6px;
+    }
+    .footer-about {
+        font-size: 0.9rem;
+    }
+    .footer-links a {
+        font-size: 0.9rem;
+        padding-left: 12px;
+    }
+    .footer-social a {
+        width: 32px;
+        height: 32px;
+        font-size: 0.9rem;
+    }
+    .contact-item i {
+        font-size: 1rem;
+        margin-right: 10px;
+    }
+    .footer-bottom {
+        padding: 12px 0;
+    }
+    .copyright, .footer-legal a {
+        font-size: 0.8rem;
     }
 }
 </style>

@@ -272,11 +272,71 @@
         /* Responsive Adjustments */
         @media (max-width: 768px) {
             .hero-content h1 {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
             }
-            
             .service-grid {
                 grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .service-showcase, .training-section, .gallery-section {
+                padding: 2.5rem 2vw;
+            }
+            .training-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .service-image, .gallery-item {
+                height: 180px;
+            }
+            .service-content {
+                padding: 1.2rem;
+            }
+        }
+        @media (max-width: 576px) {
+            .hero-content h1 {
+                font-size: 1.4rem;
+            }
+            .hero-content p {
+                font-size: 1rem;
+            }
+            .service-image, .gallery-item {
+                height: 120px;
+            }
+            .service-content, .training-content {
+                padding: 0.8rem;
+            }
+            .section-title {
+                font-size: 1.2rem;
+            }
+            .cta-button {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.95rem;
+            }
+            .specs-grid {
+                grid-template-columns: 1fr;
+            }
+            ul {
+                margin-left: 1rem !important;
+            }
+        }
+        @media (max-width: 400px) {
+            .hero-content h1 {
+                font-size: 1.1rem;
+            }
+            .service-image, .gallery-item {
+                height: 80px;
+            }
+            .cta-button {
+                font-size: 0.85rem;
+                padding: 0.5rem 0.8rem;
+            }
+            .service-overlay h3{
+                font-size: 1.2rem;
+
             }
         }
     </style>
